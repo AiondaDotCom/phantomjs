@@ -4,6 +4,19 @@ PhantomJS ([phantomjs.org](http://phantomjs.org)) is a headless WebKit scriptabl
 
 **Important**: PhantomJS development is suspended until further notice (see [#15344](https://github.com/ariya/phantomjs/issues/15344) for more details).
 
+## Instructions on how to build it on Ubuntu 22 LTS
+
+    $ apt-cache search libqt5 | cut -d ' ' -f1 | grep -v gles | xargs apt install -y
+    $ apt-get -y install xvfb git g++ cmake gstreamer1.0-plugins-base-apps
+    $ cd /tmp
+    $ git clone https://github.com/AiondaDotCom/phantomjs.git
+    $ cd /tmp/phantomjs
+    $ ./configure
+    $ make
+    $ cp /tmp/phantomjs/bin/phantomjs /usr/local/bin
+
+Thahts all, simply run the command "phantomjs". :-)
+
 ## Use Cases
 
 - **Headless web testing**. Lightning-fast testing without the browser is now possible!
